@@ -15,12 +15,12 @@ public class MyHttpHandler implements HttpHandler {
     public void handle(HttpExchange exchange) throws IOException {
 
         //Имя текущей директории
-        String FOLDEPATH = "mypackage";
+        String FOLDERPATH = "mypackage";
 
         String response;
 
         //Получаем спимок файлов в директории
-        File dir = new File(getClass().getClassLoader().getResource(FOLDEPATH).getFile());
+        File dir = new File(getClass().getClassLoader().getResource(FOLDERPATH).getFile());
         File[] files = dir.listFiles();
 
         //Если тип запроса "GET" то передаем список файлов
