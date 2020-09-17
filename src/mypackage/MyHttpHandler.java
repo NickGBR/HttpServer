@@ -28,6 +28,9 @@ public class MyHttpHandler implements HttpHandler {
             response = fileToString(files);
             handleResponse(exchange,response);
         }
+        else{
+            handleResponse(exchange,"WebPage is not found");
+        }
         System.out.println(exchange.getRequestMethod());
     }
 

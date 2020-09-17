@@ -17,10 +17,8 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         //Передаем настройки сервера и запускаем его.
         server.createContext("/socket", new MyHttpHandler());
         server.start();
-
     }
 }
