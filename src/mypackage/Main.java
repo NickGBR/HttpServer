@@ -16,6 +16,8 @@ public class Main {
             server = HttpServer.create(new InetSocketAddress("localhost", 8001), 0);
         } catch (IOException e) {
             e.printStackTrace();
+            System.out.println("Server problems");
+            System.exit(0);
         }
         //Передаем настройки сервера и запускаем его.
         server.createContext("/socket", new MyHttpHandler());
