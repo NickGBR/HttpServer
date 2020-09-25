@@ -14,13 +14,11 @@ public class Main {
         HttpServer server=null;
         try {
             server = HttpServer.create(new InetSocketAddress("localhost", 8001), 0);
+            server.createContext("/socket", new MyHttpHandler());
+            server.start();
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("Server problems");
-            System.exit(0);
         }
-        //Передаем настройки сервера и запускаем его.
-        server.createContext("/socket", new MyHttpHandler());
-        server.start();
     }
 }

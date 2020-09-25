@@ -32,8 +32,7 @@ public class MyHttpHandler implements HttpHandler {
             System.out.println(exchange.getRequestMethod());
         }
         else{
-            String error404 = "<h1>404 Not Found</h1> No context found for request";
-            handleResponse(exchange, error404);
+            exchange.sendResponseHeaders(404,-1);
         }
         System.out.println(exchange.getRequestMethod());
     }
